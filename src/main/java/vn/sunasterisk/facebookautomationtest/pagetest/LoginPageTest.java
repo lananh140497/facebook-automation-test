@@ -14,15 +14,16 @@ public class LoginPageTest {
         passwordElement.sendKeys(password);
         WebElement buttonLogin = webDriver.findElement(By.xpath("//*[@type='submit']"));
         buttonLogin.click();
-        String url = "https://www.facebook.com/?sk=welcome";
-        String currentUrl = webDriver.getCurrentUrl();
-        if (url.equals(currentUrl)){
+        Thread.sleep(2000);
+        String title = "Facebook";
+        String currentTitle = webDriver.getTitle();
+        if (title.equals(currentTitle)){
             System.out.println("["+email+"] - ["+password+"]: Login thành công");
         } else {
             WebElement mgsElement = webDriver.findElement(By.xpath("//*[@class='_9ay7']"));
             System.out.println("["+email+"] - ["+password+"]: "+ mgsElement.getText());
         }
-        Thread.sleep(2000);
+        Thread.sleep(10000);
         webDriver.close();
         webDriver.quit();
     }
