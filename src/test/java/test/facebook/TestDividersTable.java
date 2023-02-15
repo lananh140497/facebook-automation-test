@@ -25,7 +25,7 @@ public class TestDividersTable {
     }
     @After
     public void turnDown() throws InterruptedException {
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         webDriver.close();
         webDriver.quit();
     }
