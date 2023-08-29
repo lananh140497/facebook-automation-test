@@ -39,11 +39,12 @@ public class TestDividersTable {
         listExpectedDividers.add(dividers2);
         listExpectedDividers.add(dividers3);
         List<WebElement> listWebElement = webDriver.findElements(By.xpath("//*[@id='main']//table[4]//tbody//tr"));
-        for( int i = 1; i< listWebElement.size(); i++){
+        for( int i = 1; i<= listWebElement.size(); i++){
             List<WebElement> listMini = webDriver.findElements(By.xpath("//*[@id='main']//table[4]//tbody//tr["+ i+"]//td"));
             Assert.assertEquals(listExpectedDividers.get(i-1).getFirstName(),listMini.get(0).getText());
             Assert.assertEquals(listExpectedDividers.get(i-1).getLastName(),listMini.get(1).getText());
             Assert.assertEquals(listExpectedDividers.get(i-1).getSavings(),listMini.get(2).getText());
         }
     }
+
 }
